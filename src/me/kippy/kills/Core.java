@@ -31,7 +31,7 @@ public class Core extends JavaPlugin implements Listener {
 		
 		Objective o = b.registerNewObjective("kill", "dummy");
 		o.setDisplaySlot(DisplaySlot.SIDEBAR);
-		o.setDisplayName("Kill Count Plugin");
+		o.setDisplayName(getConfig().getString("ScoreboardMessage"));
 		
 		Score kills = o.getScore(ChatColor.GREEN + "Kills:");
 		kills.setScore(0);
@@ -68,6 +68,8 @@ public class Core extends JavaPlugin implements Listener {
 		this.logger.info("Kill Counter has been enabled!");
 		PluginManager pm = getServer().getPluginManager();
 		pm.registerEvents(this, this);
+		saveDefaultConfig();
+		reloadConfig();
 		
 		sm = Bukkit.getScoreboardManager();
 	}
