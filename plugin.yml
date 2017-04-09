@@ -1,0 +1,5 @@
+name: Kill Counter
+main: me.kippy.kills.Core
+version: 1.0
+description: >
+             Count how many kills a player gets.
